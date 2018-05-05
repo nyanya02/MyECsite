@@ -6,11 +6,6 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-/**
- *
- * @author internous
- *
- */
 public class UserCreateConfirmAction extends ActionSupport implements SessionAware {
 
 	private String loginUserId;

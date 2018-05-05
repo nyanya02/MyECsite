@@ -9,26 +9,13 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class BuyItemAction extends ActionSupport implements SessionAware {
 
-	/**
-	 * ƒAƒCƒeƒ€w“üŒÂ”
-	 */
 	private int count;
 
-	/**
-	 * x•¥‚¢•û–@
-	 */
 	private String pay;
 
-	/**
-	 * ƒAƒCƒeƒ€î•ñ‚ğŠi”[
-	 */
 	public Map<String, Object>  session;
 
-	/**
-	 * ¤•iî•ñæ“¾ƒƒ\ƒbƒh
-	 *
-	 * @author internous
-	 */
+
 	public String execute() {
 		String result = SUCCESS;
 		session.put("count", count);
@@ -40,11 +27,11 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 
 		if(pay.equals("1")) {
 
-			payment = "Œ»‹à•¥‚¢";
+			payment = "ç¾é‡‘æ‰•ã„";
 			session.put("pay", payment);
 		} else {
 
-			payment = "ƒNƒŒƒWƒbƒgƒJ[ƒh";
+			payment = "ã‚¯ãƒ¬ã‚¸ãƒƒãƒˆã‚«ãƒ¼ãƒ‰";
 			session.put("pay", payment);
 		}
 		return result;

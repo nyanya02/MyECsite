@@ -14,14 +14,7 @@ public class MyPageDAO {
 
 	private Connection connection = dbConnector.getConnection();
 
-	/**
-	 * ¤•i—š—ğæ“¾
-	 *
-	 * @param item_transaction_id
-	 * @param user_master_id
-	 * @return
-	 * @throws SQLException
-	 */
+
 	public ArrayList<MyPageDTO> getMyPageUserInfo(String item_transaction_id, String user_master_id) throws SQLException {
 		ArrayList<MyPageDTO> myPageDTO = new ArrayList<MyPageDTO>();
 
@@ -54,14 +47,6 @@ public class MyPageDAO {
 		return myPageDTO;
 	}
 
-	/**
-	 * ¤•i—š—ğíœ
-	 *
-	 * @param item_transaction_id
-	 * @param user_master_id
-	 * @return
-	 * @throws SQLException
-	 */
 	public int buyItemHistoryDelete(String item_transaction_id, String user_master_id) throws SQLException {
 
 		String sql = "DELETE FROM user_buy_item_transaction where item_transaction_id  = ? AND user_master_id  = ?";

@@ -13,40 +13,23 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class MyPageAction extends ActionSupport implements SessionAware{
 
-	/**
-	 * ƒƒOƒCƒ“î•ñ‚ğŠi”[
-	 */
 	public Map<String, Object> session;
 
-	/**
-	 * ƒ}ƒCƒy[ƒWî•ñæ“¾DAO
-	 */
 	private MyPageDAO myPageDAO = new MyPageDAO();
 
-	/**
-	 * ƒ}ƒCƒy[ƒWî•ñŠi”[DTO
-	 */
 	public ArrayList<MyPageDTO> myPageList = new ArrayList<MyPageDTO>();
 
-	/**
-	 * íœƒtƒ‰ƒO
-	 */
 	private String deleteFlg;
 
 	private String message;
 
-	/**
-	 * ¤•i—š—ğæ“¾ƒƒ\ƒbƒh
-	 *
-	 * @author internous
-	 */
+
 	public String execute() throws SQLException {
 
 		if (!session.containsKey("id")) {
 			return ERROR;
 		}
 
-		// ¤•i—š—ğ‚ğíœ‚µ‚È‚¢ê‡
 		if(deleteFlg == null) {
 			String item_transaction_id = session.get("id").toString();
 			String user_master_id = session.get("login_user_id").toString();
@@ -57,7 +40,6 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 			if (!(iterator.hasNext())) {
 				myPageList = null;
 			}
-		// ¤•i—š—ğ‚ğíœ‚·‚éê‡
 		} else if(deleteFlg.equals("1")) {
 			delete();
 		}
@@ -66,11 +48,6 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 		return result;
 	}
 
-	/**
-	 * ¤•i—š—ğíœ
-	 *
-	 * @throws SQLException
-	 */
 	public void delete() throws SQLException {
 
 		String item_transaction_id = session.get("id").toString();
@@ -80,13 +57,11 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 
 		if(res > 0) {
 			myPageList = null;
-			setMessage("¤•iî•ñ‚ğ³‚µ‚­íœ‚µ‚Ü‚µ‚½B");
+			setMessage("å•†å“æƒ…å ±ã‚’æ­£ã—ãå‰Šé™¤ã—ã¾ã—ãŸã€‚");
 		} else if(res == 0) {
-			setMessage("¤•iî•ñ‚Ìíœ‚É¸”s‚µ‚Ü‚µ‚½B");
+			setMessage("å•†å“æƒ…å ±ã®å‰Šé™¤ã«å¤±æ•—ã—ã¾ã—ãŸã€‚");
 		}
 	}
-
-
 
 	public String getDeleteFlg() {
 		return deleteFlg;

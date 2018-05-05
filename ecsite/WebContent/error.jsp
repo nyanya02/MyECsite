@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>m(_ _)m Error Page... OTL</title>
+<title>Error Page...</title>
 </head>
 <body>
 <h1>エラーが発生しました。</h1>

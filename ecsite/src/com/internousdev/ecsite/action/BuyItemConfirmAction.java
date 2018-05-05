@@ -14,11 +14,7 @@ public class BuyItemConfirmAction extends ActionSupport implements SessionAware{
 
 	private BuyItemCompleteDAO buyItemCompleteDAO = new BuyItemCompleteDAO();
 
-	/**
-	 * 商品購入情報登録メソッド
-	 *
-	 * @author internous
-	 */
+
 	public String execute() throws SQLException {
 
 		buyItemCompleteDAO.buyItemeInfo(
